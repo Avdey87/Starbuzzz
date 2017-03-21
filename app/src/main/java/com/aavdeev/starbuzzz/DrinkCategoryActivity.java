@@ -1,7 +1,10 @@
 package com.aavdeev.starbuzzz;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,5 +19,12 @@ public class DrinkCategoryActivity extends ListActivity {
                 this, android.R.layout.simple_list_item_1, Drink.drinks
         );
         listDrinks.setAdapter(listAdpter);
+
+    public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
+        Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
+        intent.putExtra(DrinkActivity.EXTRA_DRINKNO, (int) id);
+        startActivity(intent);
     }
+
 }
+    }
