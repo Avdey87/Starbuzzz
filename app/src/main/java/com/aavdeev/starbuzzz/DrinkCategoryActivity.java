@@ -20,11 +20,12 @@ public class DrinkCategoryActivity extends ListActivity {
         );
         listDrinks.setAdapter(listAdpter);
 
+
+
+}
     public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
         Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
         intent.putExtra(DrinkActivity.EXTRA_DRINKNO, (int) id);
         startActivity(intent);
     }
-
 }
-    }
