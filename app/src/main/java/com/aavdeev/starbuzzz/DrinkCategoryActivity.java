@@ -19,11 +19,11 @@ public class DrinkCategoryActivity extends ListActivity {
                 this, android.R.layout.simple_list_item_1, Drink.drinks
         );
         listDrinks.setAdapter(listAdpter);
-
-
-
 }
-    public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
         intent.putExtra(DrinkActivity.EXTRA_DRINKNO, (int) id);
         startActivity(intent);
